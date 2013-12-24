@@ -38,25 +38,76 @@
 		<icon>../images/logo/telebielingue.png</icon>
     </item> 	
     <item>
+        <title>Radio Pilatus</title>
+        <link>http://video.radiopilatus.ch:443/rtplive/cam1.stream/playlist.m3u8|COMPONENT=HLS</link>   
+        <description>Lokalfernsehen Radio Pilatus Luzern (Schweiz) / Local TV station Radio Pilatus Lucerne (Switzerland)</description>
+		<icon>../images/logo/radio_pilatus.png</icon>
+    </item> 	
+    <item>
+        <title>Pilatus Beatz - Music</title>
+        <link>http://rtmp.infomaniak.ch/livecast/beatz_3/playlist.m3u8|COMPONENT=HLS</link>   
+        <description>Lokalfernsehen Radio Pilatus Luzern (Schweiz) / Local TV station Radio Pilatus Lucerne (Switzerland)</description>
+		<icon>../images/logo/radio_pilatus.png</icon>
+    </item> 	
+    <item>
+        <title>TVM3 - Music</title>
+        <link>http://rtmp.infomaniak.ch/livecast/tvm3/playlist.m3u8|COMPONENT=HLS</link>   
+        <description>Lokalfernsehen TVM3 Musik (Schweiz) / Local TV station TVM3 Music (Switzerland)</description>
+		<icon>../images/logo/tvm3.png</icon>
+    </item> 	
+    <item>
+        <title>Rouge TV - Music</title>
+        <link>http://rtmp.infomaniak.ch/livecast/rougetv/playlist.m3u8|COMPONENT=HLS</link>   
+        <description>Lokalfernsehen TVM3 Musik (Schweiz) / Local TV station TVM3 Music (Switzerland)</description>
+		<icon>../images/logo/rouge_tv.png</icon>
+    </item> 	
+    <item>
         <title>Canal 9</title>
         <link>http://httpstream.canal9.ch/canal9live.m3u8|COMPONENT=HLS</link>   
         <description>Lokalfernsehen aus dem Wallis (Schweiz) / Local TV station from valais (Switzerland)</description>
 		<icon>../images/logo/kanal9.png</icon>
     </item> 	
+    <item>
+        <title>Canal Alpha NE</title>
+        <link>http://rtmp.infomaniak.ch/livecast/canalalpha/playlist.m3u8|COMPONENT=HLS</link>   
+        <description>Lokalfernsehen aus Neuchatel (Schweiz) / Local TV station from Neuchatel (Switzerland)</description>
+		<icon>../images/logo/canal_alpha.png</icon>
+    </item> 	
+    <item>
+        <title>Canal Alpha JU</title>
+        <link>http://rtmp.infomaniak.ch/livecast/canalalphaju/playlist.m3u8|COMPONENT=HLS</link>   
+        <description>Lokalfernsehen aus Jura (Schweiz) / Local TV station from Jura (Switzerland)</description>
+		<icon>../images/logo/canal_alpha.png</icon>
+    </item> 	
+    <item>
+        <title>La Tele</title>
+        <link>http://rtmp.infomaniak.ch/livecast/latele/playlist.m3u8|COMPONENT=HLS</link>   
+        <description>Lokalfernsehen aus Waadt Freiburg (Schweiz) / Local TV station from Vaud Fribourg (Switzerland)</description>
+		<icon>../images/logo/la_tele.png</icon>
+    </item> 	
+    <item>
+        <title>RTS un</title>
+        <link>https://srgssr_uni_9_ch-lh.akamaihd.net/i/enc9uni_ch@112904/master.m3u8|COMPONENT=HLS</link>   
+        <description>Lokalfernsehen aus der Romandie (Schweiz) / Local TV station from the french part of Switzerland</description>
+		<icon>../images/logo/rts_un.png</icon>
+    </item> 	
+    <item>
+        <title>RTS deux</title>
+        <link>https://srgssr_uni_10_ch-lh.akamaihd.net/i/enc10uni_ch@112993/master.m3u8|COMPONENT=HLS</link>   
+        <description>Lokalfernsehen aus der Romandie (Schweiz) / Local TV station from the french part of Switzerland</description>
+		<icon>../images/logo/rts_deux.png</icon>
+    </item> 	
+    <item>
+        <title>RTS Info</title>
+        <link>http://srgssr_uni_11_ww-lh.akamaihd.net/i/enc11uni_ww@112996/master.m3u8|COMPONENT=HLS</link>   
+        <description>Lokalfernsehen aus der Romandie (Schweiz) / Local TV station from the french part of Switzerland</description>
+		<icon>../images/logo/rts_info.png</icon>
+    </item> 	
+    <item>
+        <title>Tele Ticino</title>
+        <link>http://rtmp.infomaniak.ch/livecast/teleticinolive/playlist.m3u8|COMPONENT=HLS</link>   
+        <description>Lokalfernsehen aus dem Tessin (Schweiz) / Local TV station from the italien part of Switzerland</description>
+		<icon>../images/logo/tele_ticino.png</icon>
+    </item> 	
     </channel>
 </rss>
-
-<!-- 
-LocalTVApp.stations.createStation("../images/logo/canal_alpha.png", "Canal Alpha NE", "http://rtmp.infomaniak.ch/livecast/canalalpha/playlist.m3u8", "CH");
-LocalTVApp.stations.createStation("../images/logo/canal_alpha.png", "Canal Alpha JU", "http://rtmp.infomaniak.ch/livecast/canalalphaju/playlist.m3u8", "CH");
-LocalTVApp.stations.createStation("../images/logo/la_tele.png", "La Tele", "http://rtmp.infomaniak.ch/livecast/latele/playlist.m3u8", "CH");
-LocalTVApp.stations.createStation("../images/logo/rts_un.png", "RTS un", "https://srgssr_uni_9_ch-lh.akamaihd.net/i/enc9uni_ch@112904/master.m3u8", "CH");
-LocalTVApp.stations.createStation("../images/logo/rts_deux.png", "RTS deux", "https://srgssr_uni_10_ch-lh.akamaihd.net/i/enc10uni_ch@112993/master.m3u8", "CH");
-LocalTVApp.stations.createStation("../images/logo/rts_info.png", "RTS Info", "http://srgssr_uni_11_ww-lh.akamaihd.net/i/enc11uni_ww@112996/master.m3u8", "CH");
-LocalTVApp.stations.createStation("../images/logo/tvm3.png", "TVM3", "http://rtmp.infomaniak.ch/livecast/tvm3/playlist.m3u8", "CH");
-LocalTVApp.stations.createStation("../images/logo/rouge_tv.png", "Rouge TV", "http://rtmp.infomaniak.ch/livecast/rougetv/playlist.m3u8", "CH");
-LocalTVApp.stations.createStation("../images/logo/radio_pilatus.png", "Radio Pilatus", "http://video.radiopilatus.ch:443/rtplive/cam1.stream/playlist.m3u8", "CH");
-LocalTVApp.stations.createStation("../images/logo/radio_pilatus.png", "Pilatus Beatz", "http://rtmp.infomaniak.ch/livecast/beatz_3/playlist.m3u8", "CH");
-LocalTVApp.stations.createStation("../images/logo/tele_ticino.png", "Tele Ticino", "http://rtmp.infomaniak.ch/livecast/teleticinolive/playlist.m3u8", "CH");
-
- -->

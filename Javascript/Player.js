@@ -49,9 +49,46 @@ Player.init = function()
     this.plugin.OnStreamInfoReady = 'Player.setTotalTime';
     this.plugin.OnBufferingStart = 'Player.onBufferingStart';
     this.plugin.OnBufferingProgress = 'Player.onBufferingProgress';
-    this.plugin.OnBufferingComplete = 'Player.onBufferingComplete';           
+    this.plugin.OnBufferingComplete = 'Player.onBufferingComplete';     
+
+    this.plugin.OnConnectionFailed = 'Player.ConnectionFailed';
+    this.plugin.OnNetworkDisconnected = 'Player.NetworkDisconnected';
+    this.plugin.OnRenderError = 'Player.RenderError';
+    this.plugin.OnStreamNotFound = 'Player.StreamNotFound';
+    this.plugin.OnAuthenticationFailed = 'Player.AuthenticationFailed';    
             
     return success;
+}
+
+Player.ConnectionFailed = function() {
+    this.plugin.Stop();
+    // should be called in error event.
+    Draw_ConnectionFailed();
+    Select_Retry_Exit();
+}
+Player.NetworkDisconnected = function() {
+    this.plugin.Stop();
+    // should be called in error event.
+    Draw_NetworkDisconnected();
+    Select_Retry_Exit();
+}
+Player.RenderError = function() {
+    this.plugin.Stop();
+    // should be called in error event.
+    Draw_RenderError();
+    Select_Retry_Exit();
+}
+Player.StreamNotFound = function() {
+    this.plugin.Stop();
+    // should be called in error event.
+    Draw_StreamNotFound();
+    Select_Retry_Exit();
+}
+Player.AuthenticationFailed = function() {
+    this.plugin.Stop();
+    // should be called in error event.
+    Draw_AuthenticationFailed();
+    Select_Retry_Exit();
 }
 
 Player.deinit = function()
@@ -103,7 +140,8 @@ Player.playVideo = function()
         this.plugin.SetPendingBuffer(640*1024); 
        
         this.plugin.Play( this.url );
-        Audio.plugin.SetSystemMute(false);
+//        Audio.plugin.SetSystemMute(false);
+        Audio.plugin.SetUserMute(0);
     }
 }
 

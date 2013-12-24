@@ -15,7 +15,7 @@
         <script language="javascript" type="text/javascript" src="Javascript/Player.js"></script>
         <script language="javascript" type="text/javascript" src="Javascript/Display.js"></script>
         <script language="javascript" type="text/javascript" src="Javascript/Audio.js"></script>
-        <script language="javascript" type="text/javascript" src="Javascript/Bitrate.js"></script>
+<!--         <script language="javascript" type="text/javascript" src="Javascript/Bitrate.js"></script> -->
         
         <!-- Style sheets -->
         <link rel="stylesheet" href="CSS/Main.css" type="text/css">
@@ -31,66 +31,66 @@
         <!-- Dummy anchor as focus for key events -->
         <a href='javascript:void(0);' id='anchor' onkeydown='Main.keyDown();'></a>
 
-        <!-- bitrate graph  -->
-        <div id="bitrateList" style="position: absolute; left: 0px; top: 0px; z-index:20;	visibility:hidden;">
-            <div id="bitrateLevel"></div>
-            <div id="bitrategraph" class="style_bitrate">
-                <table height="220" >  
-                    <tr  valign="bottom">
-                        <td><div id="bandwidth0" class="style_bandwidthbar"></div></td>
-                        <td><div id="bitrate0" class="style_bitratebar"></div></td>
-                        <td><div id="bandwidth1" class="style_bandwidthbar"></div></td>
-                        <td><div id="bitrate1" class="style_bitratebar"></div></td>
-                        <td><div id="bandwidth2" class="style_bandwidthbar"></div></td>
-                        <td><div id="bitrate2" class="style_bitratebar"></div></td>
-                        <td><div id="bandwidth3" class="style_bandwidthbar"></div></td>
-                        <td><div id="bitrate3" class="style_bitratebar"></div></td>
-                        <td><div id="bandwidth4" class="style_bandwidthbar"></div></td>
-                        <td><div id="bitrate4" class="style_bitratebar"></div></td>
-                        <td><div id="bandwidth5" class="style_bandwidthbar"></div></td>
-                        <td><div id="bitrate5" class="style_bitratebar"></div></td>
-                        <td><div id="bandwidth6" class="style_bandwidthbar"></div></td>
-                        <td><div id="bitrate6" class="style_bitratebar"></div></td>
-                        <td><div id="bandwidth7" class="style_bandwidthbar"></div></td>
-                        <td><div id="bitrate7" class="style_bitratebar"></div></td>            
+<!--         bitrate graph  -->
+<!--         <div id="bitrateList" style="position: absolute; left: 0px; top: 0px; z-index:20;	visibility:hidden;"> -->
+<!--             <div id="bitrateLevel"></div> -->
+<!--             <div id="bitrategraph" class="style_bitrate"> -->
+<!--                 <table height="220" >   -->
+<!--                     <tr  valign="bottom"> -->
+<!--                         <td><div id="bandwidth0" class="style_bandwidthbar"></div></td> -->
+<!--                         <td><div id="bitrate0" class="style_bitratebar"></div></td> -->
+<!--                         <td><div id="bandwidth1" class="style_bandwidthbar"></div></td> -->
+<!--                         <td><div id="bitrate1" class="style_bitratebar"></div></td> -->
+<!--                         <td><div id="bandwidth2" class="style_bandwidthbar"></div></td> -->
+<!--                         <td><div id="bitrate2" class="style_bitratebar"></div></td> -->
+<!--                         <td><div id="bandwidth3" class="style_bandwidthbar"></div></td> -->
+<!--                         <td><div id="bitrate3" class="style_bitratebar"></div></td> -->
+<!--                         <td><div id="bandwidth4" class="style_bandwidthbar"></div></td> -->
+<!--                         <td><div id="bitrate4" class="style_bitratebar"></div></td> -->
+<!--                         <td><div id="bandwidth5" class="style_bandwidthbar"></div></td> -->
+<!--                         <td><div id="bitrate5" class="style_bitratebar"></div></td> -->
+<!--                         <td><div id="bandwidth6" class="style_bandwidthbar"></div></td> -->
+<!--                         <td><div id="bitrate6" class="style_bitratebar"></div></td> -->
+<!--                         <td><div id="bandwidth7" class="style_bandwidthbar"></div></td> -->
+<!--                         <td><div id="bitrate7" class="style_bitratebar"></div></td>             -->
 
-                        <td><div id="bandwidth8" class="style_bandwidthbar"></div></td>
-                        <td><div id="bitrate8" class="style_bitratebar"></div></td>    
-                        <td><div id="bandwidth9" class="style_bandwidthbar"></div></td>
-                        <td><div id="bitrate9" class="style_bitratebar"></div></td>    
-                        <td><div id="bandwidth10" class="style_bandwidthbar"></div></td>
-                        <td><div id="bitrate10" class="style_bitratebar"></div></td>    
-                        <td><div id="bandwidth11" class="style_bandwidthbar"></div></td>
-                        <td><div id="bitrate11" class="style_bitratebar"></div></td>    
-                        <td><div id="bandwidth12" class="style_bandwidthbar"></div></td>
-                        <td><div id="bitrate12" class="style_bitratebar"></div></td>    
-                        <td><div id="bandwidth13" class="style_bandwidthbar"></div></td>
-                        <td><div id="bitrate13" class="style_bitratebar"></div></td>                    
-                        <td><div id="bandwidth14" class="style_bandwidthbar"></div></td>
-                        <td><div id="bitrate14" class="style_bitratebar"></div></td>    
-                        <td><div id="bandwidth15" class="style_bandwidthbar"></div></td>
-                        <td><div id="bitrate15" class="style_bitratebar"></div></td>                    
+<!--                         <td><div id="bandwidth8" class="style_bandwidthbar"></div></td> -->
+<!--                         <td><div id="bitrate8" class="style_bitratebar"></div></td>     -->
+<!--                         <td><div id="bandwidth9" class="style_bandwidthbar"></div></td> -->
+<!--                         <td><div id="bitrate9" class="style_bitratebar"></div></td>     -->
+<!--                         <td><div id="bandwidth10" class="style_bandwidthbar"></div></td> -->
+<!--                         <td><div id="bitrate10" class="style_bitratebar"></div></td>     -->
+<!--                         <td><div id="bandwidth11" class="style_bandwidthbar"></div></td> -->
+<!--                         <td><div id="bitrate11" class="style_bitratebar"></div></td>     -->
+<!--                         <td><div id="bandwidth12" class="style_bandwidthbar"></div></td> -->
+<!--                         <td><div id="bitrate12" class="style_bitratebar"></div></td>     -->
+<!--                         <td><div id="bandwidth13" class="style_bandwidthbar"></div></td> -->
+<!--                         <td><div id="bitrate13" class="style_bitratebar"></div></td>                     -->
+<!--                         <td><div id="bandwidth14" class="style_bandwidthbar"></div></td> -->
+<!--                         <td><div id="bitrate14" class="style_bitratebar"></div></td>     -->
+<!--                         <td><div id="bandwidth15" class="style_bandwidthbar"></div></td> -->
+<!--                         <td><div id="bitrate15" class="style_bitratebar"></div></td>                     -->
 
-                        <td><div id="bandwidth16" class="style_bandwidthbar"></div></td>
-                        <td><div id="bitrate16" class="style_bitratebar"></div></td>    
-                        <td><div id="bandwidth17" class="style_bandwidthbar"></div></td>
-                        <td><div id="bitrate17" class="style_bitratebar"></div></td>    
-                        <td><div id="bandwidth18" class="style_bandwidthbar"></div></td>
-                        <td><div id="bitrate18" class="style_bitratebar"></div></td>    
-                        <td><div id="bandwidth19" class="style_bandwidthbar"></div></td>
-                        <td><div id="bitrate19" class="style_bitratebar"></div></td>    
-                        <td><div id="bandwidth20" class="style_bandwidthbar"></div></td>
-                        <td><div id="bitrate20" class="style_bitratebar"></div></td>    
-                        <td><div id="bandwidth21" class="style_bandwidthbar"></div></td>
-                        <td><div id="bitrate21" class="style_bitratebar"></div></td>                    
-                        <td><div id="bandwidth22" class="style_bandwidthbar"></div></td>
-                        <td><div id="bitrate22" class="style_bitratebar"></div></td>    
-                        <td><div id="bandwidth23" class="style_bandwidthbar"></div></td>
-                        <td><div id="bitrate23" class="style_bitratebar"></div></td>
-                    </tr>
-                </table>
-            </div>
-        </div>   
+<!--                         <td><div id="bandwidth16" class="style_bandwidthbar"></div></td> -->
+<!--                         <td><div id="bitrate16" class="style_bitratebar"></div></td>     -->
+<!--                         <td><div id="bandwidth17" class="style_bandwidthbar"></div></td> -->
+<!--                         <td><div id="bitrate17" class="style_bitratebar"></div></td>     -->
+<!--                         <td><div id="bandwidth18" class="style_bandwidthbar"></div></td> -->
+<!--                         <td><div id="bitrate18" class="style_bitratebar"></div></td>     -->
+<!--                         <td><div id="bandwidth19" class="style_bandwidthbar"></div></td> -->
+<!--                         <td><div id="bitrate19" class="style_bitratebar"></div></td>     -->
+<!--                         <td><div id="bandwidth20" class="style_bandwidthbar"></div></td> -->
+<!--                         <td><div id="bitrate20" class="style_bitratebar"></div></td>     -->
+<!--                         <td><div id="bandwidth21" class="style_bandwidthbar"></div></td> -->
+<!--                         <td><div id="bitrate21" class="style_bitratebar"></div></td>                     -->
+<!--                         <td><div id="bandwidth22" class="style_bandwidthbar"></div></td> -->
+<!--                         <td><div id="bitrate22" class="style_bitratebar"></div></td>     -->
+<!--                         <td><div id="bandwidth23" class="style_bandwidthbar"></div></td> -->
+<!--                         <td><div id="bitrate23" class="style_bitratebar"></div></td> -->
+<!--                     </tr> -->
+<!--                 </table> -->
+<!--             </div> -->
+<!--         </div>    -->
 
 
         <!-- Layout begins -->
