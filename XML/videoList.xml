@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+    <item>
+        <title>Tele Bärn</title>
+        <link>http://rtmp.infomaniak.ch/livecast/barntele/playlist.m3u8|COMPONENT=HLS</link>   
+        <description>Lokalfernsehen aus Bern (Schweiz) / Local TV station from Bern (Switzerland)</description>
+		<icon>../images/logo/tele_baern.png</icon>
+    </item> 	
+    <item>
+        <title>Tele Basel</title>
+        <link>http://xapp510394368c1000199.f.l.z.lb.core-cdn.net/10096xtelebase/ios_500/playlist.m3u8|COMPONENT=HLS</link>   
+        <description>Lokalfernsehen aus Basel (Schweiz) / Local TV station from Basel (Switzerland)</description>
+		<icon>../images/logo/tele_basel.png</icon>
+    </item> 	
+    <item>
+        <title>Tele Züri</title>
+        <link>http://rtmp.infomaniak.ch/livecast/telezuri/playlist.m3u8|COMPONENT=HLS</link>   
+        <description>Lokalfernsehen aus Zürich (Schweiz) / Local TV station from Zurich (Switzerland)</description>
+		<icon>../images/logo/tele_zueri.png</icon>
+    </item> 	
+    <item>
+        <title>Tele 1</title>
+        <link>http://rrr.sz.xlcdn.com/?account=ZentralschweizerFernsehenTele1AG&amp;file=live-mbr-2500&amp;type=live&amp;service=wowza&amp;protocol=http&amp;output=playlist.m3u8|COMPONENT=HLS</link>   
+        <description>Lokalfernsehen aus der Zentral-Schweiz / Local TV station from central Switzerland</description>
+		<icon>../images/logo/tele1.png</icon>
+    </item> 	
+    <item>
+        <title>Tele Ostschweiz</title>
+        <link>http://rtmp.infomaniak.ch/livecast/tvo/playlist.m3u8|COMPONENT=HLS</link>   
+        <description>Lokalfernsehen aus der Ost-Schweiz / Local TV station from eastern Switzerland</description>
+		<icon>../images/logo/tele_ostschweiz.png</icon>
+    </item> 	
+    <item>
+        <title>Tele Bielingue</title>
+        <link>http://rtmp.infomaniak.ch/livecast/telebielinguech/playlist.m3u8|COMPONENT=HLS</link>   
+        <description>Lokalfernsehen aus Biel - Bienne (Schweiz) / Local TV station from Biel - Bienne (Switzerland)</description>
+		<icon>../images/logo/telebielingue.png</icon>
+    </item> 	
+    <item>
+        <title>Canal 9</title>
+        <link>http://httpstream.canal9.ch/canal9live.m3u8|COMPONENT=HLS</link>   
+        <description>Lokalfernsehen aus dem Wallis (Schweiz) / Local TV station from valais (Switzerland)</description>
+		<icon>../images/logo/kanal9.png</icon>
+    </item> 	
+    </channel>
+</rss>
+
+<!-- 
+LocalTVApp.stations.createStation("../images/logo/canal_alpha.png", "Canal Alpha NE", "http://rtmp.infomaniak.ch/livecast/canalalpha/playlist.m3u8", "CH");
+LocalTVApp.stations.createStation("../images/logo/canal_alpha.png", "Canal Alpha JU", "http://rtmp.infomaniak.ch/livecast/canalalphaju/playlist.m3u8", "CH");
+LocalTVApp.stations.createStation("../images/logo/la_tele.png", "La Tele", "http://rtmp.infomaniak.ch/livecast/latele/playlist.m3u8", "CH");
+LocalTVApp.stations.createStation("../images/logo/rts_un.png", "RTS un", "https://srgssr_uni_9_ch-lh.akamaihd.net/i/enc9uni_ch@112904/master.m3u8", "CH");
+LocalTVApp.stations.createStation("../images/logo/rts_deux.png", "RTS deux", "https://srgssr_uni_10_ch-lh.akamaihd.net/i/enc10uni_ch@112993/master.m3u8", "CH");
+LocalTVApp.stations.createStation("../images/logo/rts_info.png", "RTS Info", "http://srgssr_uni_11_ww-lh.akamaihd.net/i/enc11uni_ww@112996/master.m3u8", "CH");
+LocalTVApp.stations.createStation("../images/logo/tvm3.png", "TVM3", "http://rtmp.infomaniak.ch/livecast/tvm3/playlist.m3u8", "CH");
+LocalTVApp.stations.createStation("../images/logo/rouge_tv.png", "Rouge TV", "http://rtmp.infomaniak.ch/livecast/rougetv/playlist.m3u8", "CH");
+LocalTVApp.stations.createStation("../images/logo/radio_pilatus.png", "Radio Pilatus", "http://video.radiopilatus.ch:443/rtplive/cam1.stream/playlist.m3u8", "CH");
+LocalTVApp.stations.createStation("../images/logo/radio_pilatus.png", "Pilatus Beatz", "http://rtmp.infomaniak.ch/livecast/beatz_3/playlist.m3u8", "CH");
+LocalTVApp.stations.createStation("../images/logo/tele_ticino.png", "Tele Ticino", "http://rtmp.infomaniak.ch/livecast/teleticinolive/playlist.m3u8", "CH");
+
+ -->
