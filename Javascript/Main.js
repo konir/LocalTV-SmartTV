@@ -54,6 +54,7 @@ Main.onLoad = function()
 Main.onUnload = function()
 {
     Player.deinit();
+    Player.stopVideo();    
 }
 
 Main.updateCurrentVideo = function(move)

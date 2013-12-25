@@ -2,7 +2,8 @@ var Data =
 {
     videoNames : [ ],
     videoURLs : [ ],
-    videoDescriptions : [ ]
+    videoDescriptions : [ ],
+	videoIcons : [ ]
 }
 
 Data.setVideoNames = function(list)
@@ -18,6 +19,11 @@ Data.setVideoURLs = function(list)
 Data.setVideoDescriptions = function(list)
 {
     this.videoDescriptions = list;
+}
+
+Data.setVideoIcons = function(list)
+{
+    this.videoIcons = list;
 }
 
 Data.getVideoURL = function(index)
@@ -55,5 +61,22 @@ Data.getVideoDescription = function(index)
     else
     {
         return "No description";
+    }
+}
+Data.getVideoIcons = function()
+{
+    return this.videoIcons;
+}
+Data.getVideoIcon = function(index)
+{
+    var icon = this.videoIcons[index];
+    
+    if (icon)    // Check for undefined entry (outside of valid array)
+    {
+        return icon;
+    }
+    else
+    {
+        return null;
     }
 }
