@@ -35,7 +35,7 @@ Main.onLoad = function()
         Server.dataReceivedCallback = function()
             {
                 /* Use video information when it has arrived */
-                Display.setVideoList( Data.getVideoNames() );
+                Display.setVideoList( Data.getVideoNames(), Data.getVideoIcons() );
                 Main.updateCurrentVideo();
             }
         Server.fetchVideoList(); /* Request video information from server */

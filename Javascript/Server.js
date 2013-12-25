@@ -69,24 +69,28 @@ Server.createVideoList = function()
             var videoNames = [ ];
             var videoURLs = [ ];
             var videoDescriptions = [ ];
+            var videoIcons = [ ];
             
             for (var index = 0; index < items.length; index++)
             {
                 var titleElement = items[index].getElementsByTagName("title")[0];
                 var descriptionElement = items[index].getElementsByTagName("description")[0];
                 var linkElement = items[index].getElementsByTagName("link")[0];
+                var iconElement = items[index].getElementsByTagName("icon")[0];
                 
                 if (titleElement && descriptionElement && linkElement)
                 {
                     videoNames[index] = titleElement.firstChild.data;
                     videoURLs[index] = linkElement.firstChild.data;
                     videoDescriptions[index] = descriptionElement.firstChild.data;
+                    videoIcons[index] = iconElement.firstChild.data;
                 }
             }
         
             Data.setVideoNames(videoNames);
             Data.setVideoURLs(videoURLs);
             Data.setVideoDescriptions(videoDescriptions);
+            Data.setVideoIcons(videoIcons);
             
             if (this.dataReceivedCallback)
             {

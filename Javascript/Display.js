@@ -105,16 +105,20 @@ Display.setVolume = function(level)
     widgetAPI.putInnerHTML(volumeElement, "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + Audio.getVolume());
 }
 
-Display.setVideoList = function(nameList)
+Display.setVideoList = function(nameList, iconList)
 {
-    var listHTML = "";
+    var listNameHTML = "";
+    var listIconHTML = "";
     
     var i=0;
     for (var name in nameList)
     {
         this.videoList[i] = document.getElementById("video"+i);
-        listHTML = nameList[name] ;
-        widgetAPI.putInnerHTML(this.videoList[i], listHTML);
+        listNameHTML = nameList[name] ;
+        listIconHTML = iconList[i] ;
+        alert('Name: '+listNameHTML);
+        alert('Icon: '+listIconHTML);
+        widgetAPI.putInnerHTML(this.videoList[i], '<img width="40px" height="20px" src="'+listIconHTML+'"> '+listNameHTML);
         i++;
     }
     this.videoList[this.FIRSTIDX].style.backgroundImage= "url(Images/listBox/selector.png)";
@@ -123,16 +127,17 @@ Display.setVideoList = function(nameList)
         document.getElementById("next").style.opacity = '1.0';
         document.getElementById("previous").style.opacity = '1.0';
     }
-    listHTML = "1 / " + i;
-    widgetAPI.putInnerHTML(document.getElementById("videoCount"), listHTML);
+    listNameHTML = "1/" + i;
+    widgetAPI.putInnerHTML(document.getElementById("videoCount"), listNameHTML);
 }
 
 Display.setVideoListPosition = function(position, move)
 {    
-    var listHTML = "";
+    var listNameHTML = "";
+    var listIconHTML = "";
     
-    listHTML = (position + 1) + " / " + Data.getVideoCount();
-    widgetAPI.putInnerHTML(document.getElementById("videoCount"), listHTML);
+    listNameHTML = (position + 1) + "/" + Data.getVideoCount();
+    widgetAPI.putInnerHTML(document.getElementById("videoCount"), listNameHTML);
     
     if(Data.getVideoCount() < 5)
     {
@@ -167,8 +172,9 @@ Display.setVideoListPosition = function(position, move)
             
             for(i = 0; i <= this.LASTIDX; i++)
             {
-                listHTML = Data.videoNames[i] ;
-                widgetAPI.putInnerHTML(this.videoList[i], listHTML);
+                listNameHTML = Data.videoNames[i] ;
+                listIconHTML = Data.videoIcons[i] ;
+                widgetAPI.putInnerHTML(this.videoList[i], '<img width="40px" height="20px" src="'+listIconHTML+'"> '+listNameHTML);
                 
                 if(i == this.currentWindow)
                     this.videoList[i].style.backgroundImage= "url(Images/listBox/selector.png)";
@@ -180,8 +186,9 @@ Display.setVideoListPosition = function(position, move)
         {            
             for(i = 0; i <= this.LASTIDX; i++)
             {
-                listHTML = Data.videoNames[i + position - this.currentWindow] ;
-                widgetAPI.putInnerHTML(this.videoList[i], listHTML);
+                listNameHTML = Data.videoNames[i + position - this.currentWindow] ;
+                listIconHTML = Data.videoIcons[i + position - this.currentWindow] ;
+                widgetAPI.putInnerHTML(this.videoList[i], '<img width="40px" height="20px" src="'+listIconHTML+'"> '+listNameHTML);
             }
         }
     }
@@ -193,8 +200,9 @@ Display.setVideoListPosition = function(position, move)
             
             for(i = 0; i <= this.LASTIDX; i++)
             {
-                listHTML = Data.videoNames[i + position - this.currentWindow] ;
-                widgetAPI.putInnerHTML(this.videoList[i], listHTML);
+                listNameHTML = Data.videoNames[i + position - this.currentWindow] ;
+                listIconHTML = Data.videoIcons[i + position - this.currentWindow] ;
+                widgetAPI.putInnerHTML(this.videoList[i], '<img width="40px" height="20px" src="'+listIconHTML+'"> '+listNameHTML);
                 
                 if(i == this.currentWindow)
                     this.videoList[i].style.backgroundImage= "url(Images/listBox/selector.png)";
@@ -206,8 +214,9 @@ Display.setVideoListPosition = function(position, move)
         {            
             for(i = 0; i <= this.LASTIDX; i++)
             {
-                listHTML = Data.videoNames[i + position] ;
-                widgetAPI.putInnerHTML(this.videoList[i], listHTML);
+                listNameHTML = Data.videoNames[i + position] ;
+                listIconHTML = Data.videoIcons[i + position] ;
+                widgetAPI.putInnerHTML(this.videoList[i], '<img width="40px" height="20px" src="'+listIconHTML+'"> '+listNameHTML);
             }
         }
     }
@@ -216,7 +225,6 @@ Display.setVideoListPosition = function(position, move)
 Display.setDescription = function(description)
 {
     var descriptionElement = document.getElementById("description");
-    
     widgetAPI.putInnerHTML(descriptionElement, description);
 }
 
