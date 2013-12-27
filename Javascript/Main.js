@@ -75,6 +75,12 @@ Main.keyDown = function()
 {
     var keyCode = event.keyCode;
     alert("Key pressed: " + keyCode);
+
+    if (keyCode == tvKey.KEY_PLAY){
+        checkInternetConnection();
+    } else {
+    	document.getElementById('PhysicalConnection').innerHTML = '';
+    }
     
     switch(keyCode)
     {
@@ -98,6 +104,7 @@ Main.keyDown = function()
             break;
             
         case tvKey.KEY_STOP:
+        case tvKey.KEY_EXIT:
             alert("STOP");
             Player.stopVideo();
             //Bitrate.stopMonitor();
@@ -136,11 +143,15 @@ Main.keyDown = function()
             break;      
 
         case tvKey.KEY_DOWN:
+        case tvKey.KEY_PANEL_CH_DOWN:
+        case 65:
             alert("DOWN");
             this.selectNextVideo(this.DOWN);
             break;
             
         case tvKey.KEY_UP:
+        case tvKey.KEY_PANEL_CH_UP:
+        case 68:
             alert("UP");
             this.selectPreviousVideo(this.UP);
             break;            
@@ -309,4 +320,19 @@ Main.muteMode = function()
             alert("ERROR: unexpected mode in muteMode");
             break;
     }
+}
+
+function checkInternetConnection(){
+	var networkPlugin = document.getElementById('pluginObjectNetwork');
+	var cType = networkPlugin.GetActiveType();
+    var phyConnection = networkPlugin.CheckPhysicalConnection(cType);
+
+    if (phyConnection == 1){
+    	document.getElementById('PhysicalConnection').innerHTML = ''; // Network OK
+    } else if (phyConnection == 0){
+    	document.getElementById('PhysicalConnection').innerHTML= 'Network Failure';
+    } else if (phyConnection == -1) {
+    	document.getElementById('PhysicalConnection').innerHTML = 'Network Error';
+    	return;
+    } 
 }
