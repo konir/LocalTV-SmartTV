@@ -326,12 +326,13 @@ function checkInternetConnection(){
 	var networkPlugin = document.getElementById('pluginObjectNetwork');
 	var cType = networkPlugin.GetActiveType();
     var phyConnection = networkPlugin.CheckPhysicalConnection(cType);
+    var httpStatus = networkPlugin.CheckHTTP(connType);
 
-    if (phyConnection == 1){
+    if (phyConnection == 1 || httpStatus == 1){
     	document.getElementById('PhysicalConnection').innerHTML = ''; // Network OK
-    } else if (phyConnection == 0){
+    } else if (phyConnection == 0 || httpStatus == 0){
     	document.getElementById('PhysicalConnection').innerHTML= 'Network Failure';
-    } else if (phyConnection == -1) {
+    } else if (phyConnection == -1 || httpStatus == -1) {
     	document.getElementById('PhysicalConnection').innerHTML = 'Network Error';
     	return;
     } 
