@@ -326,7 +326,7 @@ function checkInternetConnection(){
 	var networkPlugin = document.getElementById('pluginObjectNetwork');
 	var cType = networkPlugin.GetActiveType();
     var phyConnection = networkPlugin.CheckPhysicalConnection(cType);
-    var httpStatus = networkPlugin.CheckHTTP(connType);
+    var httpStatus = networkPlugin.CheckHTTP(cType);
 
     if (phyConnection == 1 || httpStatus == 1){
     	document.getElementById('PhysicalConnection').innerHTML = ''; // Network OK
