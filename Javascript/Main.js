@@ -327,12 +327,17 @@ function checkInternetConnection(){
 	var cType = networkPlugin.GetActiveType();
     var phyConnection = networkPlugin.CheckPhysicalConnection(cType);
     var httpStatus = networkPlugin.CheckHTTP(cType);
+	var gateway = networkPlugin.CheckGateway(cType);
+    
+    alert('phyConnection='+phyConnection);
+    alert('httpStatus='+httpStatus);
+    alert('gateway='+gateway);
 
-    if (phyConnection == 1 || httpStatus == 1){
+    if (phyConnection == 1 && httpStatus == 1 && gateway == 1){
     	document.getElementById('PhysicalConnection').innerHTML = ''; // Network OK
-    } else if (phyConnection == 0 || httpStatus == 0){
+    } else if (phyConnection == 0 || httpStatus == 0 || gateway == 0){
     	document.getElementById('PhysicalConnection').innerHTML= 'Network Failure';
-    } else if (phyConnection == -1 || httpStatus == -1) {
+    } else if (phyConnection == -1 || httpStatus == -1 || gateway == -1) {
     	document.getElementById('PhysicalConnection').innerHTML = 'Network Error';
     	return;
     } 
