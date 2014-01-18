@@ -159,7 +159,11 @@ Main.keyDown = function()
         case tvKey.KEY_ENTER:
         case tvKey.KEY_PANEL_ENTER:
             alert("ENTER");
-            this.toggleMode();
+            if(Player.getState() == Player.PLAYING){
+            	this.toggleMode();
+            } else {
+            	Player.playVideo();
+            }
             if( this.mode == Main.WINDOW)
             {
                 //Bitrate.hideGraph();
@@ -284,8 +288,8 @@ Main.setMuteMode = function()
         var volumeElement = document.getElementById("volumeInfo");
 //        Audio.plugin.SetSystemMute(true);
         Audio.plugin.SetUserMute(1);
-        document.getElementById("volumeBar").style.backgroundImage = "url(Images/videoBox/muteBar.png)";
-        document.getElementById("volumeIcon").style.backgroundImage = "url(Images/videoBox/mute.png)";
+        document.getElementById("volumeBar").style.backgroundImage = "url(images/videoBox/muteBar.png)";
+        document.getElementById("volumeIcon").style.backgroundImage = "url(images/videoBox/mute.png)";
         widgetAPI.putInnerHTML(volumeElement, "MUTE");
         this.mute = this.YMUTE;
     }
@@ -297,8 +301,8 @@ Main.noMuteMode = function()
     {
 //        Audio.plugin.SetSystemMute(false); 
         Audio.plugin.SetUserMute(0); 
-        document.getElementById("volumeBar").style.backgroundImage = "url(Images/videoBox/volumeBar.png)";
-        document.getElementById("volumeIcon").style.backgroundImage = "url(Images/videoBox/volume.png)";
+        document.getElementById("volumeBar").style.backgroundImage = "url(images/videoBox/volumeBar.png)";
+        document.getElementById("volumeIcon").style.backgroundImage = "url(images/videoBox/volume.png)";
         Display.setVolume( Audio.getVolume() );
         this.mute = this.NMUTE;
     }

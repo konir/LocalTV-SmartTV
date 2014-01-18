@@ -116,22 +116,22 @@ Bitrate.setGraphBitrateRange= function(bitraterange /*Mbps*/)
     if( bitraterange >= 0 && bitraterange< 4 )
     {
         this.nPixelPerMbps = 50; // 0~4 Mbps  , 1Mbps ==> 50px
-        graph.style.background="url('./Images/bitrate/bitrateBG4.png')";
+        graph.style.background="url('./images/bitrate/bitrateBG4.png')";
     }
     else  if(  bitraterange< 6 )
     {
         this.nPixelPerMbps = 35.0; // 0~5.7 Mbps  , 1Mbps ==> 35.0px
-        graph.style.background="url('./Images/bitrate/bitrateBG6.png')";
+        graph.style.background="url('./images/bitrate/bitrateBG6.png')";
     }    
     else  if( bitraterange< 12 )
     {
         this.nPixelPerMbps = 16.7; // 0~12 Mbps  , 1Mbps ==> 16.7px
-        graph.style.background="url('./Images/bitrate/bitrateBG12.png')";
+        graph.style.background="url('./images/bitrate/bitrateBG12.png')";
     }
     else
     {
         this.nPixelPerMbps = 5; // 0~40 Mbps  , 1Mbps ==> 5px
-        graph.style.background="url('./Images/bitrate/bitrateBG40.png')";    
+        graph.style.background="url('./images/bitrate/bitrateBG40.png')";    
     }
     this.resetGraphBar();   	
 }
@@ -508,9 +508,9 @@ Bitrate.drawCurBitrateLevel = function (curLevel, LevelSize)
         bartop = top +   barMaxheight -     barheight;
         
         if( i <= curLevel )
-        {  this.createDiv(levelgraphDiv, "bitratelevelbar"+i, barleft, bartop, barwidth, barheight,  "./Images/bitrate/blue192.png" ); }
+        {  this.createDiv(levelgraphDiv, "bitratelevelbar"+i, barleft, bartop, barwidth, barheight,  "./images/bitrate/blue192.png" ); }
         else
-        {  this.createDiv(levelgraphDiv, "bitratelevelbar"+i, barleft, bartop, barwidth, barheight,  "./Images/bitrate/white64.png" ); }
+        {  this.createDiv(levelgraphDiv, "bitratelevelbar"+i, barleft, bartop, barwidth, barheight,  "./images/bitrate/white64.png" ); }
     }
 }
 

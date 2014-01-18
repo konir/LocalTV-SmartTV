@@ -121,7 +121,7 @@ Display.setVideoList = function(nameList, iconList)
         widgetAPI.putInnerHTML(this.videoList[i], '<img width="40px" height="20px" src="'+listIconHTML+'"> '+listNameHTML);
         i++;
     }
-    this.videoList[this.FIRSTIDX].style.backgroundImage= "url(Images/listBox/selector.png)";
+    this.videoList[this.FIRSTIDX].style.backgroundImage= "url(images/listBox/selector.png)";
     if(i>5)
     {
         document.getElementById("next").style.opacity = '1.0';
@@ -144,7 +144,7 @@ Display.setVideoListPosition = function(position, move)
         for (var i = 0; i < Data.getVideoCount(); i++)
         {
             if(i == position)
-                this.videoList[i].style.backgroundImage= "url(Images/listBox/selector.png)";
+                this.videoList[i].style.backgroundImage= "url(images/listBox/selector.png)";
             else
                 this.videoList[i].style.backgroundImage= "url(none)";
         }
@@ -159,7 +159,7 @@ Display.setVideoListPosition = function(position, move)
         for (var i = 0; i <= this.LASTIDX; i++)
         {
             if(i == this.currentWindow)
-                this.videoList[i].style.backgroundImage= "url(Images/listBox/selector.png)";
+                this.videoList[i].style.backgroundImage= "url(images/listBox/selector.png)";
             else
                 this.videoList[i].style.backgroundImage= "url(none)";
         }
@@ -177,7 +177,7 @@ Display.setVideoListPosition = function(position, move)
                 widgetAPI.putInnerHTML(this.videoList[i], '<img width="40px" height="20px" src="'+listIconHTML+'"> '+listNameHTML);
                 
                 if(i == this.currentWindow)
-                    this.videoList[i].style.backgroundImage= "url(Images/listBox/selector.png)";
+                    this.videoList[i].style.backgroundImage= "url(images/listBox/selector.png)";
                 else
                     this.videoList[i].style.backgroundImage= "url(none)";
             }
@@ -205,7 +205,7 @@ Display.setVideoListPosition = function(position, move)
                 widgetAPI.putInnerHTML(this.videoList[i], '<img width="40px" height="20px" src="'+listIconHTML+'"> '+listNameHTML);
                 
                 if(i == this.currentWindow)
-                    this.videoList[i].style.backgroundImage= "url(Images/listBox/selector.png)";
+                    this.videoList[i].style.backgroundImage= "url(images/listBox/selector.png)";
                 else
                     this.videoList[i].style.backgroundImage= "url(none)";
             }

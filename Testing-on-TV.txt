@@ -1,0 +1,30 @@
+Testing Your Application on a TV
+--------------------------------
+http://www.samsungdforum.com/Guide/d20/index.html#d20-install-the-web-server
+
+ - Setup Apache:
+   http://osxdaily.com/2012/09/02/start-apache-web-server-mac-os-x/
+
+ - MAC Book IP = 192.168.178.24
+
+ - Apache Server Path: /etc/apache2
+
+ - in "httpd.conf" -> Root:
+   # DocumentRoot "/Library/WebServer/Documents"
+   DocumentRoot "/Users/Koni/Sites"
+
+ - Start: sudo apachectl start
+
+ - Stop: sudo apachectl stop
+
+ - Terminal admin:  sudo -s
+ 
+ 
+ config.xml
+ ----------
+ 
+<width>960</width>
+<height>540</height>
+
+<width>1280</width>
+<height>720</height>

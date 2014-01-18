@@ -17,8 +17,8 @@
 	<type>user</type>
 	<widgetname>Local TV</widgetname>
 	<description></description>
-	<width>960</width>
-	<height>540</height>
+	<width>1280</width>
+	<height>720</height>
 	<author>
 		<name>Koni</name>
 		<email></email>
