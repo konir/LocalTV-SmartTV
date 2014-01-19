@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<widget>
+<widget xmlns="http://www.samsung.com/">
 	<previewjs>PreviewHASTutorial</previewjs>
-	<preicon></preicon>
-	<cpname></cpname>
-	<cplogo></cplogo>
-	<cpauthjs></cpauthjs>
-	<ver></ver>
-	<mgrver></mgrver>
+	<preicon/>
+	<cpname/>
+	<cplogo/>
+	<cpauthjs/>
+	<ver>1.0.2</ver>
+	<mgrver/>
 	<fullwidget>y</fullwidget>
 	<srcctl>n</srcctl>
 	<ticker>n</ticker>
@@ -16,13 +16,19 @@
 	<dcont>y</dcont>
 	<type>user</type>
 	<widgetname>Local TV</widgetname>
-	<description></description>
-	<width>1280</width>
-	<height>720</height>
+	<description>Lokal Fernsehen</description>
+	<width>960</width>
+	<height>540</height>
 	<author>
 		<name>Koni</name>
 		<email></email>
 		<link>http://localtv.koni.mobi</link>
-		<organization></organization>
+		<organization/>
 	</author>
+<category>Videos</category>
+<autoUpdate>y</autoUpdate>
+<BigThumbIcon>icon/localtv-115.png</BigThumbIcon>
+<ListIcon>icon/localtv-85.png</ListIcon>
+<BigListIcon>icon/localtv-95.png</BigListIcon>
+<ThumbIcon>icon/localtv-106.png</ThumbIcon>
 </widget>

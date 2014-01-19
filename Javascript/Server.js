@@ -5,6 +5,7 @@ var Server =
     
     XHRObj : null,
     url : "XML/videoList.xml"
+   // url : "http://koni.mobi/localtv/samsung/videoList.xml"
 }
 
 Server.init = function()

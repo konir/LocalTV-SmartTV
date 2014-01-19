@@ -28,3 +28,32 @@ http://www.samsungdforum.com/Guide/d20/index.html#d20-install-the-web-server
 
 <width>1280</width>
 <height>720</height>
+
+
+Warnings after upload:
+----------------------
+
+warning 	The 'category' tag is not exist.
+warning 	The 'type' tag is only used while developing. It will be removed automatically.
+warning 	The 'ThumbIcon' tag is not exist.
+warning 	The 'BigThumbIcon' tag is not exist.
+warning 	The 'ListIcon' tag is not exist.
+warning 	The 'BigListIcon' tag is not exist.
+warning 	The 'ThumbIconHD' tag is not exist.
+warning 	The 'BigThumbIconHD' tag is not exist.
+warning 	The 'ListIconHD' tag is not exist.
+warning 	The 'BigListIconHD' tag is not exist.
+notify 	The 'category' tag's value is empty. It will be filled with the value 'information'.
+notify 	The 'widgetname' tag has different value than 'Local TV'.
+notify 	The 'ver' tag's value is empty. It will be filled with value '1.002'.
+notify 	The 'ThumbIcon' tag's value will be filled with the value 'THUM_LIST_OFF_20131224084821805.png'.
+notify 	The 'BigThumbIcon' tag's value will be filled with the value 'THUM_LIST_ON_20131224084821805.png'.
+notify 	The 'ListIcon' tag's value will be filled with the value 'LIST_OFF_20131224084821805.png'.
+notify 	The 'BigListIcon' tag's value will be filled with the value 'LIST_ON_20131224084821805.png'.
+notify 	The 'ThumbIconHD' tag's value will be filled with the value 'HD_THUM_LIST_OFF_20131224084821805.png'.
+notify 	The 'BigThumbIconHD' tag's value will be filled with the value 'HD_THUM_LIST_ON_20131224084821805.png'.
+notify 	The 'ListIconHD' tag's value will be filled with the value 'HD_LIST_OFF_20131224084821805.png'.
+notify 	The 'BigListIconHD' tag's value will be filled with the value 'HD_LIST_ON_20131224084821805.png'.
+
+
+
