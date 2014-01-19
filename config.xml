@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns="http://www.samsung.com/">
-	<previewjs>PreviewHASTutorial</previewjs>
-	<preicon/>
 	<cpname/>
-	<cplogo/>
 	<cpauthjs/>
-	<ver>1.0.2</ver>
+	<ver>1.002</ver>
 	<mgrver/>
 	<fullwidget>y</fullwidget>
 	<srcctl>n</srcctl>
