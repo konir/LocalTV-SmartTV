@@ -95,20 +95,12 @@ Main.keyDown = function()
         case tvKey.KEY_PLAY:
             alert("PLAY");
             this.handlePlayKey();
-            //Bitrate.init();
-            
-            //var playerplugin =  document.getElementById("pluginPlayer");
-            //Bitrate.setPlayer(playerplugin);
-            
-            //Bitrate.startMonitor();            
             break;
             
         case tvKey.KEY_STOP:
         case tvKey.KEY_EXIT:
             alert("STOP");
             Player.stopVideo();
-            //Bitrate.stopMonitor();
-            //Bitrate.deinit();
             break;
             
         case tvKey.KEY_PAUSE:
@@ -164,14 +156,6 @@ Main.keyDown = function()
             } else {
             	Player.playVideo();
             }
-            if( this.mode == Main.WINDOW)
-            {
-                //Bitrate.hideGraph();
-             }
-             if( this.mode == Main.FULLSCREEN)
-            {
-                //Bitrate.showGraph();
-             }              
             break;
         
         case tvKey.KEY_MUTE:

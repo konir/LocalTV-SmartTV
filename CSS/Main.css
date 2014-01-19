@@ -13,16 +13,16 @@
 /* Layout */
 body
 {
-/*     width: 960px; height: 540px; */
-    width: 1280px; height: 720px;
+    width: 960px; height: 540px;
+/*     width: 1280px; height: 720px; */
 }
 
 #main
 {
      position: absolute;
      left: 0px; top: 0px;
-/*      width: 960px; height: 540px; */
-     width: 1280px; height: 720px;
+     width: 960px; height: 540px;
+/*      width: 1280px; height: 720px; */
 }
 
 #logo
@@ -379,37 +379,3 @@ body
     height:20px;
     font-size:20px;
 }
-
-
-.style_bitrate
-{
-	position:absolute;
-	left:65px; top:313px; 
-	width: 830px; height:220px;
-	vertical-align:bottom;
-	z-index:20;
-	opacity:0.5; 	
-	border: none;
-	background-image:url("../images/bitrate/bitrateBG4.png");  
-}
-
-.style_bitratebar
-{
-	position:absolute;
-	left:1px; top:1px; 
-	width: 1px; height:1px;
-	opacity:0.5; 	
-	border: none;	
-	background-image: url("../images/bitrate/blue128.png");
-}
-
-.style_bandwidthbar
-{
-	position:absolute;
-	left:1px; top:1px; 
-	width: 1px; height:1px;
-	opacity:0.5; 	
-	border: none;	
-	background-image: url("../images/bitrate/red128.png");
-}
-
