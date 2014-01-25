@@ -96,7 +96,7 @@ body
 {
     position:absolute;
     left:4px; top:8px;
-    width:400px; height:8px;
+    width:380px; height:8px;
     background-image:url("../images/videoBox/progressBarBG.png");
 }
 
@@ -111,7 +111,7 @@ body
 #timeInfo
 {
     position:absolute;
-    left:408px; top:4px;
+    left:388px; top:4px;
     width:60px; height:16px;
     
     text-align:center;

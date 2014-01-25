@@ -27,7 +27,7 @@ Player.init = function()
     }
     else
     {
-        var mwPlugin = document.getElementById("pluginTVMW");
+        var mwPlugin = document.getElementById("pluginObjectTVMW");
         
         if (!mwPlugin)
         {
@@ -93,7 +93,7 @@ Player.AuthenticationFailed = function() {
 
 Player.deinit = function()
 {
-        var mwPlugin = document.getElementById("pluginTVMW");
+        var mwPlugin = document.getElementById("pluginObjectTVMW");
         
         if (mwPlugin && (this.originalSource != null) )
         {

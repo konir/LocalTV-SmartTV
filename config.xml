@@ -2,7 +2,7 @@
 <widget xmlns="http://www.samsung.com/">
 	<cpname/>
 	<cpauthjs/>
-	<ver>1.002</ver>
+	<ver>1.004</ver>
 	<mgrver/>
 	<fullwidget>y</fullwidget>
 	<srcctl>n</srcctl>
@@ -13,13 +13,13 @@
 	<dcont>y</dcont>
 	<type>user</type>
 	<widgetname>Local TV</widgetname>
-	<description>Lokal Fernsehen</description>
+	<description>Lokalfernsehen aus der Schweiz und dem deutschsprachigen Raum</description>
 	<width>960</width>
 	<height>540</height>
 	<author>
 		<name>Koni</name>
-		<email></email>
-		<link>http://localtv.koni.mobi</link>
+		<email/>
+		<link>http://koni.mobi</link>
 		<organization/>
 	</author>
 <category>Videos</category>

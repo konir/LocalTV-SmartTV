@@ -1,5 +1,6 @@
 var widgetAPI = new Common.API.Widget();
 var tvKey = new Common.API.TVKeyValue();
+var pluginAPI = new Common.API.Plugin();
 
 var Main =
 {
@@ -19,6 +20,9 @@ var Main =
 
 Main.onLoad = function()
 {
+	
+	window.onShow = onShowHandler;
+	
     if ( Player.init() && Audio.init() && Display.init() && Server.init() )
     {
         Display.setVolume( Audio.getVolume() );
@@ -51,6 +55,19 @@ Main.onLoad = function()
     }
 }
 
+onShowHandler = function ()
+{
+	pluginAPI.setOnScreenSaver();
+	//pluginAPI.setOffScreenSaver();
+};
+
+setScreenTime = function()
+{
+	// Set screensaver out time to 10 sec - for testing.
+	alert ("[APPS] ----- Set screensaver timeout 10 seconds");
+	pluginAPI.setOnScreenSaver();
+	
+}
 Main.onUnload = function()
 {
     Player.deinit();
@@ -88,12 +105,21 @@ Main.keyDown = function()
         case tvKey.KEY_PANEL_RETURN:
             alert("RETURN");
             Player.stopVideo();
+
+            alert ("[APPS] ----- Turn off the screensaver");
+    		pluginAPI.setOnScreenSaver();	
+
             widgetAPI.sendReturnEvent(); 
             break;    
             break;
     
         case tvKey.KEY_PLAY:
             alert("PLAY");
+            checkInternetConnection();
+            
+            alert ("[APPS] ----- Turn off the screensaver");
+    		pluginAPI.setOffScreenSaver();	
+            
             this.handlePlayKey();
             break;
             
@@ -101,24 +127,33 @@ Main.keyDown = function()
         case tvKey.KEY_EXIT:
             alert("STOP");
             Player.stopVideo();
+            
+            // Turn On the screensaver operation
+			alert ("[APPS] ----- Turn on the screensaver with 10 secs");
+			pluginAPI.setOnScreenSaver();
+            
             break;
             
         case tvKey.KEY_PAUSE:
             alert("PAUSE");
             this.handlePauseKey();
+            
+            alert ("[APPS] ----- Turn on the screensaver with 10 secs");
+			pluginAPI.setOnScreenSaver();
+            
             break;
             
-        case tvKey.KEY_FF:
-            alert("FF");
-            if(Player.getState() != Player.PAUSED)
-                Player.skipForwardVideo();
-            break;
-        
-        case tvKey.KEY_RW:
-            alert("RW");
-            if(Player.getState() != Player.PAUSED)
-                Player.skipBackwardVideo();
-            break;
+//        case tvKey.KEY_FF:
+//            alert("FF");
+//            if(Player.getState() != Player.PAUSED)
+//                Player.skipForwardVideo();
+//            break;
+//        
+//        case tvKey.KEY_RW:
+//            alert("RW");
+//            if(Player.getState() != Player.PAUSED)
+//                Player.skipBackwardVideo();
+//            break;
 
         case tvKey.KEY_VOL_UP:
         case tvKey.KEY_PANEL_VOL_UP:
@@ -151,6 +186,11 @@ Main.keyDown = function()
         case tvKey.KEY_ENTER:
         case tvKey.KEY_PANEL_ENTER:
             alert("ENTER");
+            checkInternetConnection();
+            
+            alert ("[APPS] ----- Turn off the screensaver");
+    		pluginAPI.setOffScreenSaver();	
+            
             if(Player.getState() == Player.PLAYING){
             	this.toggleMode();
             } else {
