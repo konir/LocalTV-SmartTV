@@ -36,19 +36,16 @@ Display.setTime = function(time)
     var timeElement = document.getElementById("timeInfo");
     var timeHTML = "";
     var timeHour = 0; var timeMinute = 0; var timeSecond = 0;
-    var totalTimeHour = 0; var totalTimeMinute = 0; var totalTimesecond = 0;
     
-    document.getElementById("progressBar").style.width = timePercent + "%";
+    //alert('timePercent = '+timePercent+' %');
+    if (timePercent <= 105){
+    	document.getElementById("progressBar").style.width = timePercent + "%";
+    }
     
     if(Player.state == Player.PLAYING)
     {
-        totalTimeHour = Math.floor(this.totalTime/3600000);
         timeHour = Math.floor(time/3600000);
-        
-        totalTimeMinute = Math.floor((this.totalTime%3600000)/60000);
         timeMinute = Math.floor((time%3600000)/60000);
-        
-        totalTimeSecond = Math.floor((this.totalTime%60000)/1000);
         timeSecond = Math.floor((time%60000)/1000);
         
         timeHTML = timeHour + ":";
@@ -61,30 +58,14 @@ Display.setTime = function(time)
             timeHTML += timeMinute + ":";
             
         if(timeSecond == 0)
-            timeHTML += "00/";
-        else if(timeSecond <10)
-            timeHTML += "0" + timeSecond + "/";
-        else
-            timeHTML += timeSecond + "/";
-            
-        timeHTML += totalTimeHour + ":";
-        
-        if(totalTimeMinute == 0)
-            timeHTML += "00:";
-        else if(totalTimeMinute <10)
-            timeHTML += "0" + totalTimeMinute;
-        else
-            timeHTML += totalTimeMinute;
-            
-        if(totalTimeSecond == 0)
             timeHTML += "00";
-        else if(totalTimeSecond <10)
-            timeHTML += "0" + totalTimeSecond;
+        else if(timeSecond <10)
+            timeHTML += "0" + timeSecond;
         else
-            timeHTML += totalTimeSecond;
+            timeHTML += timeSecond;
     }
     else
-        timeHTML = "0:00:00/0:00:00";     
+        timeHTML = "0:00:00";     
     
     widgetAPI.putInnerHTML(timeElement, timeHTML);
     

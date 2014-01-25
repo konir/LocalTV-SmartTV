@@ -235,6 +235,8 @@ Player.onBufferingProgress = function(percent)
 
 Player.onBufferingComplete = function()
 {
+	document.getElementById('PhysicalConnection').innerHTML = '';
+
     Display.status("Play");
     switch(this.skipState)
     {

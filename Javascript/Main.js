@@ -104,22 +104,35 @@ Main.keyDown = function()
         case tvKey.KEY_RETURN:
         case tvKey.KEY_PANEL_RETURN:
             alert("RETURN");
-            Player.stopVideo();
 
-            alert ("[APPS] ----- Turn off the screensaver");
-    		pluginAPI.setOnScreenSaver();	
-
-            widgetAPI.sendReturnEvent(); 
-            break;    
+            if (this.mode == this.FULLSCREEN){
+                alert("RETURN from FULLSCREEN = setWindowMode()");
+                Main.setWindowMode();
+                alert("break");
+            } else if (Player.getState() == Player.PLAYING){
+                alert("RETURN from WINDOW-MODE and isPLAYING = stopVideo()");
+                Player.stopVideo();
+                alert ("[APPS] ----- Turn off the screensaver");
+        		pluginAPI.setOnScreenSaver();
+            } else {
+            	alert("RETURN else = sendReturnEvent()");
+            	widgetAPI.sendReturnEvent(); 
+        		pluginAPI.setOnScreenSaver();
+            }
             break;
     
         case tvKey.KEY_PLAY:
             alert("PLAY");
-            checkInternetConnection();
-            
-            alert ("[APPS] ----- Turn off the screensaver");
-    		pluginAPI.setOffScreenSaver();	
-            
+ 
+            var connectionIsReady = checkInternetConnection();
+
+        	if (connectionIsReady == 3){
+        		alert('url(icon/loading_small.png)');
+        		document.getElementById('PhysicalConnection').innerHTML = '<img src="icon/loading_gray_128.gif">';
+        		alert ("[APPS] ----- Turn off the screensaver");
+        		pluginAPI.setOffScreenSaver();	
+        	}
+
             this.handlePlayKey();
             break;
             
@@ -127,6 +140,7 @@ Main.keyDown = function()
         case tvKey.KEY_EXIT:
             alert("STOP");
             Player.stopVideo();
+            document.getElementById("progressBar").style.width = 0;
             
             // Turn On the screensaver operation
 			alert ("[APPS] ----- Turn on the screensaver with 10 secs");
@@ -186,15 +200,20 @@ Main.keyDown = function()
         case tvKey.KEY_ENTER:
         case tvKey.KEY_PANEL_ENTER:
             alert("ENTER");
-            checkInternetConnection();
-            
-            alert ("[APPS] ----- Turn off the screensaver");
-    		pluginAPI.setOffScreenSaver();	
+            var connectionIsReady = checkInternetConnection();
             
             if(Player.getState() == Player.PLAYING){
             	this.toggleMode();
             } else {
-            	Player.playVideo();
+            	if (connectionIsReady == 3){
+            		
+	            	try {            		
+	            		Player.playVideo();
+	            	} catch(err) {
+	            		document.getElementById('PhysicalConnection').innerHTML = 'Temporary error. Please try again later... ('+ err +')';
+	            	}
+            		document.getElementById('PhysicalConnection').innerHTML = '<img src="icon/loading_gray_128.gif">';
+            	}
             }
             break;
         
@@ -211,20 +230,24 @@ Main.keyDown = function()
 
 Main.handlePlayKey = function()
 {
-    switch ( Player.getState() )
-    {
-        case Player.STOPPED:
-            Player.playVideo();
-            break;
-            
-        case Player.PAUSED:
-            Player.resumeVideo();
-            break;
-            
-        default:
-            alert("Ignoring play key, not in correct state");
-            break;
-    }
+	try{
+		switch ( Player.getState() )
+		{
+		case Player.STOPPED:
+			Player.playVideo();
+			break;
+			
+		case Player.PAUSED:
+			Player.resumeVideo();
+			break;
+			
+		default:
+			alert("Ignoring play key, not in correct state");
+		break;
+		}
+	} catch(err) {
+		document.getElementById('PhysicalConnection').innerHTML = 'Temporary error. Please try again later... ('+ err +')';
+	}
 }
 
 Main.handlePauseKey = function()
@@ -367,6 +390,7 @@ function checkInternetConnection(){
     	document.getElementById('PhysicalConnection').innerHTML= 'Network Failure';
     } else if (phyConnection == -1 || httpStatus == -1 || gateway == -1) {
     	document.getElementById('PhysicalConnection').innerHTML = 'Network Error';
-    	return;
     } 
+    return phyConnection+httpStatus+gateway;
 }
+
