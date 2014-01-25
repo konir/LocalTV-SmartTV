@@ -8,9 +8,9 @@ var Player =
     
     STOPPED : 0,
     PLAYING : 1,
-    PAUSED : 2,  
-    FORWARD : 3,
-    REWIND : 4
+    PAUSED : 2  
+//    FORWARD : 3,
+//    REWIND : 4
 }
 
 Player.init = function()
@@ -131,8 +131,8 @@ Player.playVideo = function()
         document.getElementById("play").style.opacity = '0.2';
         document.getElementById("stop").style.opacity = '1.0';
         document.getElementById("pause").style.opacity = '1.0';
-        document.getElementById("forward").style.opacity = '1.0';
-        document.getElementById("rewind").style.opacity = '1.0';
+//        document.getElementById("forward").style.opacity = '1.0';
+//        document.getElementById("rewind").style.opacity = '1.0';
         Display.status("Play");
         this.setWindow();
         
@@ -151,8 +151,8 @@ Player.pauseVideo = function()
     document.getElementById("play").style.opacity = '1.0';
     document.getElementById("stop").style.opacity = '1.0';
     document.getElementById("pause").style.opacity = '0.2';
-    document.getElementById("forward").style.opacity = '0.2';
-    document.getElementById("rewind").style.opacity = '0.2';
+//    document.getElementById("forward").style.opacity = '0.2';
+//    document.getElementById("rewind").style.opacity = '0.2';
     Display.status("Pause");
     this.plugin.Pause();
 }
@@ -165,8 +165,8 @@ Player.stopVideo = function()
         document.getElementById("play").style.opacity = '1.0';
         document.getElementById("stop").style.opacity = '0.2';
         document.getElementById("pause").style.opacity = '0.2';
-        document.getElementById("forward").style.opacity = '0.2';
-        document.getElementById("rewind").style.opacity = '0.2';
+//        document.getElementById("forward").style.opacity = '0.2';
+//        document.getElementById("rewind").style.opacity = '0.2';
         Display.status("Stop");
         this.plugin.Stop();
         Display.setTime(0);
@@ -188,8 +188,8 @@ Player.resumeVideo = function()
     document.getElementById("play").style.opacity = '0.2';
     document.getElementById("stop").style.opacity = '1.0';
     document.getElementById("pause").style.opacity = '1.0';
-    document.getElementById("forward").style.opacity = '1.0';
-    document.getElementById("rewind").style.opacity = '1.0';
+//    document.getElementById("forward").style.opacity = '1.0';
+//    document.getElementById("rewind").style.opacity = '1.0';
     Display.status("Play");
     this.plugin.Resume();
 }
