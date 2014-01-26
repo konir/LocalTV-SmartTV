@@ -93,11 +93,13 @@ Main.keyDown = function()
     var keyCode = event.keyCode;
     alert("Key pressed: " + keyCode);
 
-    if (keyCode == tvKey.KEY_PLAY){
-        checkInternetConnection();
-    } else {
-    	document.getElementById('PhysicalConnection').innerHTML = '';
-    }
+    var connectionIsReady = checkInternetConnection();
+
+//    if (keyCode == tvKey.KEY_PLAY){
+//        checkInternetConnection();
+//    } else {
+//    	document.getElementById('PhysicalConnection').innerHTML = '';
+//    }
     
     switch(keyCode)
     {
@@ -124,12 +126,12 @@ Main.keyDown = function()
         case tvKey.KEY_PLAY:
             alert("PLAY");
  
-            var connectionIsReady = checkInternetConnection();
-
         	if (connectionIsReady == 3){
-        		alert('url(icon/loading_small.png)');
-        		document.getElementById('PhysicalConnection').innerHTML = '<img src="icon/loading_gray_128.gif">';
-        		alert ("[APPS] ----- Turn off the screensaver");
+        		if (Player.getState() != Player.PAUSED && Player.getState() != Player.PLAYING){
+        			alert('Player.getState() = '+Player.getState());
+        			document.getElementById('PhysicalConnection').innerHTML = '<img src="icon/loading.gif">';
+        			alert ("[APPS] ----- Turn off the screensaver");
+        		}
         		pluginAPI.setOffScreenSaver();	
         	}
 
@@ -200,19 +202,20 @@ Main.keyDown = function()
         case tvKey.KEY_ENTER:
         case tvKey.KEY_PANEL_ENTER:
             alert("ENTER");
-            var connectionIsReady = checkInternetConnection();
             
             if(Player.getState() == Player.PLAYING){
             	this.toggleMode();
             } else {
-            	if (connectionIsReady == 3){
-            		
+            	if (connectionIsReady == 3){ // 3 connections checked
 	            	try {            		
-	            		Player.playVideo();
+		        		if (Player.getState() != Player.PAUSED){
+		        			alert('Player.getState() = '+Player.getState());
+		        			document.getElementById('PhysicalConnection').innerHTML = '<img src="icon/loading.gif">';
+		        		}
+		        		Player.playVideo();
 	            	} catch(err) {
 	            		document.getElementById('PhysicalConnection').innerHTML = 'Temporary error. Please try again later... ('+ err +')';
 	            	}
-            		document.getElementById('PhysicalConnection').innerHTML = '<img src="icon/loading_gray_128.gif">';
             	}
             }
             break;
