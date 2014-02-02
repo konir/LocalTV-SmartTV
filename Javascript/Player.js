@@ -127,6 +127,7 @@ Player.playVideo = function()
     }
     else
     {
+    	pluginAPI.setOffScreenSaver();
         this.state = this.PLAYING;
         document.getElementById("play").style.opacity = '0.2';
         document.getElementById("stop").style.opacity = '1.0';
@@ -161,6 +162,7 @@ Player.stopVideo = function()
 {
     if (this.state != this.STOPPED)
     {
+    	pluginAPI.setOnScreenSaver();
         this.state = this.STOPPED;
         document.getElementById("play").style.opacity = '1.0';
         document.getElementById("stop").style.opacity = '0.2';
@@ -248,6 +250,10 @@ Player.onBufferingComplete = function()
             document.getElementById("rewind").style.opacity = '1.0';
             break;
     }
+}
+
+Player.onRenderingComplete = function () {
+    pluginAPI.setOnScreenSaver();
 }
 
 Player.setCurTime = function(time)

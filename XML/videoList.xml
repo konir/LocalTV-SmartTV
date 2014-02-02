@@ -7,12 +7,12 @@
         <description>Lokalfernsehen aus Bern (Schweiz)&lt;br&gt;Local TV station from Bern (Switzerland)</description>
 		<icon>images/logo/tele_baern.png</icon>
     </item> 	
-<!--     <item> -->
-<!--         <title>Tele Basel</title> -->
-<!--         <link>http://xapp510394368c1000199.f.l.z.lb.core-cdn.net/10096xtelebase/ios_500/playlist.m3u8|COMPONENT=HLS</link>    -->
-<!--         <description>Lokalfernsehen aus Basel (Schweiz)&lt;br&gt;Local TV station from Basel (Switzerland)</description> -->
-<!-- 		<icon>images/logo/tele_basel.png</icon> -->
-<!--     </item> 	 -->
+    <item>
+        <title>Tele Basel</title>
+        <link>http://xapp510394368c1000199.f.l.z.lb.core-cdn.net/10096xtelebase/ios_500/playlist.m3u8|COMPONENT=HLS</link>   
+        <description>Lokalfernsehen aus Basel (Schweiz)&lt;br&gt;Local TV station from Basel (Switzerland)</description>
+		<icon>images/logo/tele_basel.png</icon>
+    </item> 	
     <item>
         <title>Tele Züri</title>
         <link>http://rtmp.infomaniak.ch/livecast/telezuri/playlist.m3u8|COMPONENT=HLS</link>   
@@ -109,24 +109,24 @@
         <description>Lokalfernsehen aus dem Tessin (Schweiz)&lt;br&gt;Local TV station from the italian part of Switzerland</description>
 		<icon>images/logo/tele_ticino.png</icon>
     </item> 
-    <item>
-        <title>Alex-Berlin</title>
-        <link>http://alex-stream.rosebud-media.de:1935/live/alexlivetv.smil/playlist.m3u8</link>   
-        <description>Lokalfernsehen aus Berlin&lt;br&gt;Local TV station from Berlin</description>
-		<icon>images/logo/alex_berlin.png</icon>
-    </item> 
-    <item>
-        <title>ManouLenz</title>
-        <link>http://mltv-i.akamaihd.net/hls/live/215727/MLTV_HLS/index.m3u8</link>   
-        <description>Shopping TV</description>
-		<icon>images/logo/manou_lenz_tv.png</icon>
-    </item> 
-    <item>
-        <title>Deluxe-Music</title>
-        <link>http://flash.cdn.deluxemusic.tv/deluxemusic.tv-live/web_850.stream/playlist.m3u8</link>   
-        <description>Musik Sender&lt;br&gt;Music station</description>
-		<icon>images/logo/deluxe_music.png</icon>
-    </item> 
+<!--     <item> -->
+<!--         <title>Alex-Berlin</title> -->
+<!--         <link>http://alex-stream.rosebud-media.de:1935/live/alexlivetv.smil/playlist.m3u8</link>    -->
+<!--         <description>Lokalfernsehen aus Berlin&lt;br&gt;Local TV station from Berlin</description> -->
+<!-- 		<icon>images/logo/alex_berlin.png</icon> -->
+<!--     </item>  -->
+<!--     <item> -->
+<!--         <title>ManouLenz</title> -->
+<!--         <link>http://mltv-i.akamaihd.net/hls/live/215727/MLTV_HLS/index.m3u8</link>    -->
+<!--         <description>Shopping TV</description> -->
+<!-- 		<icon>images/logo/manou_lenz_tv.png</icon> -->
+<!--     </item>  -->
+<!--     <item> -->
+<!--         <title>Deluxe-Music</title> -->
+<!--         <link>http://flash.cdn.deluxemusic.tv/deluxemusic.tv-live/web_850.stream/playlist.m3u8</link>    -->
+<!--         <description>Musik Sender&lt;br&gt;Music station</description> -->
+<!-- 		<icon>images/logo/deluxe_music.png</icon> -->
+<!--     </item>  -->
     <item>
         <title>P3tv</title>
         <link>http://p3-6.mov.at:1935/live/weekstream/playlist.m3u8</link>   
