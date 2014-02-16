@@ -127,11 +127,11 @@
 <!--         <description>Musik Sender&lt;br&gt;Music station</description> -->
 <!-- 		<icon>images/logo/deluxe_music.png</icon> -->
 <!--     </item>  -->
-    <item>
-        <title>P3tv</title>
-        <link>http://p3-6.mov.at:1935/live/weekstream/playlist.m3u8</link>   
-        <description>Lokalfernsehen aus Österreich</description>
-		<icon>images/logo/p3_tv.png</icon>
-    </item> 
+<!--     <item> -->
+<!--         <title>P3tv</title> -->
+<!--         <link>http://p3-6.mov.at:1935/live/weekstream/playlist.m3u8</link>    -->
+<!--         <description>Lokalfernsehen aus Österreich</description> -->
+<!-- 		<icon>images/logo/p3_tv.png</icon> -->
+<!--     </item>  -->
 	</channel>
 </rss>

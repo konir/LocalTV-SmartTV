@@ -114,7 +114,7 @@ Main.keyDown = function()
             } else if (Player.getState() == Player.PLAYING){
                 alert("RETURN from WINDOW-MODE and isPLAYING = stopVideo()");
                 Player.stopVideo();
-                alert ("[APPS] ----- Turn off the screensaver");
+                alert ("[APPS] ----- Turn on the screensaver");
         		pluginAPI.setOnScreenSaver();
             } else {
             	alert("RETURN else = sendReturnEvent()");
@@ -206,17 +206,15 @@ Main.keyDown = function()
             if(Player.getState() == Player.PLAYING){
             	this.toggleMode();
             } else {
-            	if (connectionIsReady == 3){ // 3 connections checked
-	            	try {            		
-		        		if (Player.getState() != Player.PAUSED){
-		        			alert('Player.getState() = '+Player.getState());
-		        			document.getElementById('PhysicalConnection').innerHTML = '<img src="icon/loading.gif">';
-		        		}
-		        		Player.playVideo();
-	            	} catch(err) {
-	            		document.getElementById('PhysicalConnection').innerHTML = 'Temporary error. Please try again later... ('+ err +')';
-	            	}
+            	if (connectionIsReady == 3){
+            		if (Player.getState() != Player.PAUSED && Player.getState() != Player.PLAYING){
+            			alert('Player.getState() = '+Player.getState());
+            			document.getElementById('PhysicalConnection').innerHTML = '<img src="icon/loading.gif">';
+            			alert ("[APPS] ----- Turn off the screensaver");
+            		}
+            		pluginAPI.setOffScreenSaver();	
             	}
+                this.handlePlayKey();
             }
             break;
         
