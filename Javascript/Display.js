@@ -38,11 +38,11 @@ Display.setTime = function(time)
     var timeHour = 0; var timeMinute = 0; var timeSecond = 0;
     
     //alert('timePercent = '+timePercent+' %');
-    if (timePercent <= 105){
+    if (timePercent <= 104){
     	document.getElementById("progressBar").style.width = timePercent + "%";
     }
     
-    if(Player.state == Player.PLAYING)
+    if(Player.state == Player.PLAYING || Player.state == Player.PAUSED)
     {
         timeHour = Math.floor(time/3600000);
         timeMinute = Math.floor((time%3600000)/60000);
@@ -63,9 +63,12 @@ Display.setTime = function(time)
             timeHTML += "0" + timeSecond;
         else
             timeHTML += timeSecond;
+        
+        savedForPause = timeHTML;
     }
-    else
-        timeHTML = "0:00:00";     
+    else {
+    	timeHTML = "0:00:00";     
+    }
     
     widgetAPI.putInnerHTML(timeElement, timeHTML);
     

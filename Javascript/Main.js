@@ -138,6 +138,25 @@ Main.keyDown = function()
             this.handlePlayKey();
             break;
             
+        case tvKey.KEY_ENTER:
+        case tvKey.KEY_PANEL_ENTER:
+            alert("ENTER");
+            
+            if(Player.getState() == Player.PLAYING){
+            	this.toggleMode();
+            } else {
+            	if (connectionIsReady == 3){
+            		if (Player.getState() != Player.PAUSED && Player.getState() != Player.PLAYING){
+            			alert('Player.getState() = '+Player.getState());
+            			document.getElementById('PhysicalConnection').innerHTML = '<img src="icon/loading.gif">';
+            		}
+            		alert ("[APPS] ----- Turn off the screensaver");
+            		pluginAPI.setOffScreenSaver();	
+            	}
+                this.handlePlayKey();
+            }
+            break;
+            
         case tvKey.KEY_STOP:
         case tvKey.KEY_EXIT:
             alert("STOP");
@@ -152,37 +171,32 @@ Main.keyDown = function()
             
         case tvKey.KEY_PAUSE:
             alert("PAUSE");
-            this.handlePauseKey();
+            Player.pauseVideo();
+            //this.handlePauseKey();
             
             alert ("[APPS] ----- Turn on the screensaver with 10 secs");
 			pluginAPI.setOnScreenSaver();
             
             break;
             
-//        case tvKey.KEY_FF:
-//            alert("FF");
-//            if(Player.getState() != Player.PAUSED)
-//                Player.skipForwardVideo();
-//            break;
-//        
-//        case tvKey.KEY_RW:
-//            alert("RW");
-//            if(Player.getState() != Player.PAUSED)
-//                Player.skipBackwardVideo();
-//            break;
-
         case tvKey.KEY_VOL_UP:
         case tvKey.KEY_PANEL_VOL_UP:
             alert("VOL_UP");
-            if(this.mute == 0)
-                Audio.setRelativeVolume(0);
+            if(this.mute == this.NMUTE){
+            	Audio.setRelativeVolume(0);
+            } else {
+            	this.noMuteMode();
+            }
             break;
             
         case tvKey.KEY_VOL_DOWN:
         case tvKey.KEY_PANEL_VOL_DOWN:
             alert("VOL_DOWN");
-            if(this.mute == 0)
-                Audio.setRelativeVolume(1);
+            if(this.mute == 0){
+            	Audio.setRelativeVolume(1);
+            } else {
+            	this.noMuteMode();
+            }
             break;      
 
         case tvKey.KEY_DOWN:
@@ -199,25 +213,6 @@ Main.keyDown = function()
             this.selectPreviousVideo(this.UP);
             break;            
 
-        case tvKey.KEY_ENTER:
-        case tvKey.KEY_PANEL_ENTER:
-            alert("ENTER");
-            
-            if(Player.getState() == Player.PLAYING){
-            	this.toggleMode();
-            } else {
-            	if (connectionIsReady == 3){
-            		if (Player.getState() != Player.PAUSED && Player.getState() != Player.PLAYING){
-            			alert('Player.getState() = '+Player.getState());
-            			document.getElementById('PhysicalConnection').innerHTML = '<img src="icon/loading.gif">';
-            			alert ("[APPS] ----- Turn off the screensaver");
-            		}
-            		pluginAPI.setOffScreenSaver();	
-            	}
-                this.handlePlayKey();
-            }
-            break;
-        
         case tvKey.KEY_MUTE:
             alert("MUTE");
             this.muteMode();
@@ -236,6 +231,7 @@ Main.handlePlayKey = function()
 		{
 		case Player.STOPPED:
 			Player.playVideo();
+			
 			break;
 			
 		case Player.PAUSED:

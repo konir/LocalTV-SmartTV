@@ -2,15 +2,12 @@ var Player =
 {
     plugin : null,
     state : -1,
-    skipState : -1,
     stopCallback : null,    /* Callback function to be set by client */
     originalSource : null,
     
     STOPPED : 0,
     PLAYING : 1,
     PAUSED : 2  
-//    FORWARD : 3,
-//    REWIND : 4
 }
 
 Player.init = function()
@@ -132,8 +129,7 @@ Player.playVideo = function()
         document.getElementById("play").style.opacity = '0.2';
         document.getElementById("stop").style.opacity = '1.0';
         document.getElementById("pause").style.opacity = '1.0';
-//        document.getElementById("forward").style.opacity = '1.0';
-//        document.getElementById("rewind").style.opacity = '1.0';
+        
         Display.status("Play");
         this.setWindow();
         
@@ -152,8 +148,7 @@ Player.pauseVideo = function()
     document.getElementById("play").style.opacity = '1.0';
     document.getElementById("stop").style.opacity = '1.0';
     document.getElementById("pause").style.opacity = '0.2';
-//    document.getElementById("forward").style.opacity = '0.2';
-//    document.getElementById("rewind").style.opacity = '0.2';
+
     Display.status("Pause");
     this.plugin.Pause();
 }
@@ -167,8 +162,7 @@ Player.stopVideo = function()
         document.getElementById("play").style.opacity = '1.0';
         document.getElementById("stop").style.opacity = '0.2';
         document.getElementById("pause").style.opacity = '0.2';
-//        document.getElementById("forward").style.opacity = '0.2';
-//        document.getElementById("rewind").style.opacity = '0.2';
+
         Display.status("Stop");
         this.plugin.Stop();
         Display.setTime(0);
@@ -190,22 +184,9 @@ Player.resumeVideo = function()
     document.getElementById("play").style.opacity = '0.2';
     document.getElementById("stop").style.opacity = '1.0';
     document.getElementById("pause").style.opacity = '1.0';
-//    document.getElementById("forward").style.opacity = '1.0';
-//    document.getElementById("rewind").style.opacity = '1.0';
+
     Display.status("Play");
     this.plugin.Resume();
-}
-
-Player.skipForwardVideo = function()
-{
-    this.skipState = this.FORWARD;
-    this.plugin.JumpForward(5);    
-}
-
-Player.skipBackwardVideo = function()
-{
-    this.skipState = this.REWIND;
-    this.plugin.JumpBackward(5);
 }
 
 Player.getState = function()
@@ -218,39 +199,27 @@ Player.getState = function()
 Player.onBufferingStart = function()
 {
     Display.status("Buffering...");
-    switch(this.skipState)
-    {
-        case this.FORWARD:
-            document.getElementById("forward").style.opacity = '0.2';
-            break;
-        
-        case this.REWIND:
-            document.getElementById("rewind").style.opacity = '0.2';
-            break;
-    }
+    alert('onBuffering Start');
 }
 
 Player.onBufferingProgress = function(percent)
 {
     Display.status("Buffering:" + percent + "%");
+    alert('onBuffering Progress...');
+
 }
 
 Player.onBufferingComplete = function()
 {
 	document.getElementById('PhysicalConnection').innerHTML = '';
+    alert('onBuffering Complete');
 
+    //this.state = this.PLAYING;
+    document.getElementById("play").style.opacity = '0.2';
+    document.getElementById("stop").style.opacity = '1.0';
+    document.getElementById("pause").style.opacity = '1.0';
     Display.status("Play");
-    switch(this.skipState)
-    {
-        case this.FORWARD:
-            document.getElementById("forward").style.opacity = '1.0';
-            break;
-        
-        case this.REWIND:
-            document.getElementById("rewind").style.opacity = '1.0';
-            break;
     }
-}
 
 Player.onRenderingComplete = function () {
     pluginAPI.setOnScreenSaver();
